@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Payment {
+  id            String   @id @default(uuid())
+  name          String
+  phone         String
+  paymentType   String
+  amount        Float
+  network       String
+  momoReference String   @unique
+  paymentMethod String   @default("manual_momo")
+  status        String   @default("pending")
+  winnings      Float?
+  createdAt     DateTime @default(now())
+}
