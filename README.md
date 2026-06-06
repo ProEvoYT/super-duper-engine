@@ -19,7 +19,7 @@ npm install
 cp .env.example .env
 ```
 
-Edit `.env` and set your PostgreSQL connection string:
+Edit `.env` and set your PostgreSQL/NeonDB connection string:
 
 ```
 DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/zero_studio_x"

@@ -1,76 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
 
-@layer base {
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
+@import "tailwindcss";
 
-  body {
-    background: #000;
-    color: #f5f2ed;
-  }
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
 }
 
-@layer components {
-  /* Main bordered panel used across the UI */
-  .card {
-    border-radius: 1rem; /* rounded-2xl */
-    border: 1px solid #222;
-    background: rgba(11, 11, 11, 0.4);
-    padding: 1rem; /* p-4 */
-  }
+* { box-sizing: border-box; }
 
-  .label {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    font-size: 0.75rem; /* text-xs */
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.12em; /* tracking-widest */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-
-  .input-field {
-    width: 100%;
-    border-radius: 0.75rem; /* rounded-xl */
-    border: 1px solid #222;
-    background: #111;
-    padding: 0.75rem 1rem; /* py-3 px-4 */
-    font-size: 0.875rem; /* text-sm */
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    color: #f5f2ed;
-    outline: none;
-  }
-
-  .input-field:focus {
-    border-color: rgba(201, 168, 76, 0.6); /* gold focus */
-  }
-
-  .btn-gold {
-    width: 100%;
-    border-radius: 0.75rem; /* rounded-xl */
-    background: #c9a84c;
-    padding: 0.75rem 1rem; /* py-3 px-4 */
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    font-size: 0.875rem; /* text-sm */
-    font-weight: 700; /* font-bold */
-    color: #000;
-    transition: background-color 150ms ease;
-  }
-
-  .btn-gold:hover:enabled {
-    background: #b8933f;
-  }
-
-  .btn-gold:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+body {
+  font-family: var(--font-body);
+  background-color: #0A0A0A;
+  color: #F5F2ED;
+  -webkit-font-smoothing: antialiased;
 }
 
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+.btn-gold {
+  background: #C9A84C;
+  color: #0A0A0A;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 12px 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-gold:hover { background: #E2C97E; }
+.btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.input-field {
+  width: 100%;
+  background: #1A1A1A;
+  border: 1px solid #2A2A2A;
+  color: #F5F2ED;
+  padding: 12px 16px;
+  outline: none;
+  transition: all 0.2s;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+.input-field:focus { border-color: #C9A84C; }
+.input-field::placeholder { color: #555; }
+
+.label {
+  display: block;
+  color: #888;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 24px;
+}
